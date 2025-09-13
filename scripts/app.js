@@ -213,3 +213,33 @@ window.onload = () => {
     gameScreen.classList.add('hidden');
     endScreen.classList.add('hidden');
 };
+
+document.addEventListener('DOMContentLoaded', function () {
+    const aboutContainer = document.querySelector('.about-icon-container');
+    const tooltip = aboutContainer.querySelector('.about-tooltip');
+    let hideTimeout;
+
+    aboutContainer.addEventListener('mouseenter', () => {
+        clearTimeout(hideTimeout);
+        tooltip.style.visibility = 'visible';
+        tooltip.style.opacity = '1';
+    });
+
+    aboutContainer.addEventListener('mouseleave', () => {
+        hideTimeout = setTimeout(() => {
+            tooltip.style.visibility = 'hidden';
+            tooltip.style.opacity = '0';
+        }, 2000);
+    });
+
+    tooltip.addEventListener('mouseenter', () => {
+        clearTimeout(hideTimeout);
+    });
+
+    tooltip.addEventListener('mouseleave', () => {
+        hideTimeout = setTimeout(() => {
+            tooltip.style.visibility = 'hidden';
+            tooltip.style.opacity = '0';
+        }, 500);
+    });
+});

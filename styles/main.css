@@ -187,6 +187,95 @@ body {
     box-shadow: 0 0 10px #00c3ff80;
 }
 
+.about-icon-container {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-icon {
+    width: 40px;
+    height: 40px;
+    background: #282828;
+    border: 2px solid #666768;
+    border-radius: 50%;
+    color: #666768;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: background 0.2s;
+    opacity: 0.2;
+}
+
+.about-icon:hover {
+    opacity: 1;
+    background: #e6f0ff;
+}
+
+.about-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    background: #333;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-bottom: 8px;
+    transition: opacity 0.2s;
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+    white-space: nowrap;
+}
+
+.about-icon-container:hover .about-tooltip,
+.about-tooltip:hover {
+    visibility: visible;
+    opacity: 1;
+}
+
+.logo-container {
+    position: fixed;
+    top: 18px;
+    left: 28px;
+    z-index: 1100;
+    user-select: none;
+}
+
+.logo-iframe {
+    width: 326px;
+    height: 102px;
+    border: none;
+    background: transparent;
+    pointer-events: auto;
+    display: block;
+    transform: scale(0.5);
+    transform-origin: top left;
+}
+
+.rgb-logo {
+    position: fixed;
+    top: 18px;
+    left: 28px;
+    font-family: 'Orbitron', 'Segoe UI', Arial, sans-serif;
+    font-size: 2.8em;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    color: #00c3ff;
+    text-shadow: 0 0 18px #00c3ff80, 0 0 4px #ffff1c80;
+    z-index: 1100;
+    user-select: none;
+    pointer-events: none;
+}
+
 @media (max-width: 600px) {
     #skillChart {
         width: 95vw;
