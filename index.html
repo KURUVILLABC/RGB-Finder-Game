@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGB Color Guessing Game</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="assets/fonts/futuristic-font.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Start Screen -->
+        <div id="start-screen" class="center-screen">
+            <button id="start-button" class="start-btn">Start Game</button>
+        </div>
+
+        <!-- Difficulty Screen (hidden initially) -->
+        <div id="difficulty-screen" class="center-screen hidden">
+            <h2>Choose Difficulty</h2>
+            <button id="easy-btn" class="start-btn">Practice</button>
+            <button id="hard-btn" class="start-btn">Challenge</button>
+        </div>
+
+        <!-- Game Screen (hidden initially) -->
+        <div id="game-screen" class="hidden">
+            <h1 class="title">RGB Color Guessing Game</h1>
+            <div class="color-display">
+                <span id="color-code"></span>
+            </div>
+            <div class="color-options">
+                <!-- 6 color boxes in 2 rows, 3 columns -->
+                <div class="color-row">
+                    <div class="color-box" id="color1"></div>
+                    <div class="color-box" id="color2"></div>
+                    <div class="color-box" id="color3"></div>
+                </div>
+                <div class="color-row">
+                    <div class="color-box" id="color4"></div>
+                    <div class="color-box" id="color5"></div>
+                    <div class="color-box" id="color6"></div>
+                </div>
+            </div>
+            <div class="message" id="message"></div>
+            <div class="score" id="score">Score: 0</div>
+        </div>
+
+        <!-- End Screen (hidden initially) -->
+        <div id="end-screen" class="hidden center-screen">
+            <h2>Game Over!</h2>
+            <div id="score-main" class="score-main"></div>
+            <div id="score-best" class="score-best"></div>
+            <div id="score-details" class="score-details"></div>
+            <canvas id="skillChart" width="400" height="220"></canvas>
+            <button id="restart-button" class="start-btn">Play Again</button>
+        </div>
+    </div>
+    <audio id="sound-correct" src="assets/correct.mp3"></audio>
+    <audio id="sound-wrong" src="assets/wrong.mp3"></audio>
+    <script src="scripts/game.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

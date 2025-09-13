@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'FuturisticFont';
+    src: url('../fonts/FuturisticFont.woff2') format('woff2'),
+         url('../fonts/FuturisticFont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'FuturisticFont', sans-serif;
+}

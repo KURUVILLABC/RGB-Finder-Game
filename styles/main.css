@@ -1,0 +1,222 @@
+body, html {
+    height: 100vh;
+    width: 100vw;
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    font-family: 'Orbitron', 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #232526 0%, #414345 100%);
+    color: #fff;
+    min-height: 100vh;
+}
+
+.container, .center-screen, #end-screen, #game-screen, #difficulty-screen, #start-screen {
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100vw;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 0;
+}
+
+.title {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.start-btn, #restart-button {
+    padding: 1em 2.5em;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 40px;
+    background: linear-gradient(90deg, #00c3ff 0%, #ffff1c 100%);
+    color: #232526;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 20px #00c3ff80;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 2em;
+    letter-spacing: 2px;
+    animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 20px #00c3ff80; }
+    50% { box-shadow: 0 0 40px #ffff1c80; }
+    100% { box-shadow: 0 0 20px #00c3ff80; }
+}
+
+.color-display {
+    font-size: 1.2em;
+    padding: 0.5em 1em;
+    border-radius: 15px;
+    margin-bottom: 1em;
+    width: 90vw;
+    max-width: 400px;
+    text-align: center;
+    background: #232526;
+    box-shadow: 0 0 10px #00c3ff80;
+    font-family: 'Orbitron', monospace;
+}
+
+.color-options {
+    width: 90vw;
+    max-width: 400px;
+    margin-bottom: 1em;
+}
+
+.color-row {
+    display: flex;
+    gap: 0.7em;
+    justify-content: center;
+}
+
+.color-box {
+    width: 24vw;
+    max-width: 110px;
+    height: 24vw;
+    max-height: 110px;
+    min-width: 60px;
+    min-height: 60px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #23252680;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 2px solid transparent;
+    animation: appear 0.5s;
+    margin: 5px;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: scale(0.8);}
+    to { opacity: 1; transform: scale(1);}
+}
+
+.color-box:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 30px #00c3ff80;
+    border: 3px solid #ffff1c;
+}
+
+.message {
+    font-size: 1.3em;
+    margin-bottom: 1em;
+    min-height: 2em;
+    text-align: center;
+    font-family: 'Orbitron', monospace;
+    transition: color 0.3s;
+}
+
+.score {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    font-family: 'Orbitron', monospace;
+}
+
+.score-main {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 0.3em;
+    color: #ffff1c;
+    text-shadow: 0 0 10px #00c3ff80;
+    text-align: center;
+}
+.score-best {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+    color: #00c3ff;
+    text-align: center;
+}
+.score-details {
+    font-size: 1em;
+    margin-bottom: 1em;
+    color: #fff;
+    opacity: 0.8;
+    text-align: center;
+}
+
+#end-screen {
+    height: 100vh;
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#end-screen h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    text-shadow: 0 0 10px #00c3ff80;
+}
+
+#final-score, #best-score {
+    font-size: 1.3em;
+    margin-bottom: 0.5em;
+    font-family: 'Orbitron', monospace;
+    text-align: center;
+}
+
+#skillChart {
+    width: 400px;
+    max-width: 95vw;
+    height: 220px !important;
+    margin: 1em auto 0 auto;
+    display: block;
+    background: #232526;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #00c3ff80;
+}
+
+@media (max-width: 600px) {
+    #skillChart {
+        width: 95vw;
+        max-width: 95vw;
+        height: 120px !important;
+    }
+    .title {
+        font-size: 1.3em;
+    }
+    .color-box {
+        width: 28vw;
+        height: 28vw;
+        max-width: 80px;
+        max-height: 80px;
+        min-width: 40px;
+        min-height: 40px;
+    }
+    .color-display, .color-options {
+        max-width: 95vw;
+        font-size: 1em;
+    }
+    .score-main {
+        font-size: 1.3em;
+    }
+    .score-best, .score-details {
+        font-size: 1em;
+    }
+    .start-btn, #restart-button {
+        font-size: 1em;
+        padding: 0.7em 1.5em;
+        margin-top: 1em;
+    }
+}
